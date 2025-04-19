@@ -1,0 +1,89 @@
+R(A,B,C,D)
+
+i. {C → D,   C → A,   B → C}
+B+ = {ABCD} = R -> candidate key
+No, not BCNF.
+No, not 3NF.
+
+-- 3NF --
+Minimal cover - {C → D,   C → A,   B → C}
+R1(CD) F = {C → D}   
+R2(CA) F = {C → A}
+R3(BC) F = {B → C}
+
+-- BCNF --
+R_old(BC) F = {B → C}
+R_new1(CD) F = {C → D}
+R_new2(CA) F = {C → A}
+
+ii. {B → C,   D → A}
+BD+ = {ABCD} = R -> candidate key
+No, not BCNF.
+No, not 3NF.
+
+-- 3NF --
+Minimal cover - {B → C,   D → A}
+R1(BC) F = {B -> C}
+R2(DA) F = {D -> A}
+R3(BD) F = {}
+
+-- BCNF --
+R_old(BD) F = {}
+R_new1(BC) F = {B → C}
+R_new2(DA) F = {D → A}
+
+iii. {ABC → D,   D → A}
+BC+ = {BC}
+ABC+ = {ABCD} = R -> candidate key
+BCD+ = {ABCD} = R -> candidate key
+No, not BCNF.
+Yes, 3NF.
+
+-- BCNF --
+R_old(BCD) F = {BC → D}
+R_new(DA) F = {D → A}
+
+iv. {A → B,   BC → D,   A → C}
+A+ = {ABCD} = R -> candidate key
+No, not BCNF.
+No, not 3NF.
+
+-- 3NF --
+Minimal Cover - {A → B,   BC → D,   A → C}
+R1(AB) F = { A -> B}
+R2(BCD) F = {BC-> D}
+R3(AC) F = {A -> C}
+
+-- BCNF --
+R_old(ABC) F = {A → B,   A → C}
+R_new(BCD) F = {BC → D}
+
+v. {AB → C,   AB → D,   C → A,   D → B}
+AB+ = {ABCD} -> candidate key
+AC+ = {AC}
+AD+ = {ABCD} -> candidate key
+BC+ = {ABCD} -> candidate key
+BD+ = {BD}
+CD+ = {ABCD} -> candidate key
+No, not BCNF.
+Yes, 3NF.
+
+-- BCNF --
+R_old(CD) F = {AB → C,   AB → D}
+R_new1(CA) F = {C -> A}
+R_new2(DB) F = {D -> B}
+
+BUT the functional dependencies AB → C,   AB → D cannot hold in relation R_old(CD) (due to no AB). So the
+decomposition becomes:
+
+R_old(CD) F = {}
+R_new1(CA) F = {C -> A}
+R_new2(DB) F = {D -> B}
+
+Which is now in BCNF BUT we do not preserve all dependencies. This examples shows that BCNF decomposition is not
+always lossless.
+
+vi. {A → BCD}
+A+ = {ABCD} -> candidate key
+Yes, BCNF
+Yes, 3NF

@@ -1,0 +1,22 @@
+Team(name, captain)
+{name -> captain}
+
+Player(name, teamPlayedFor)
+{name -> teamPlayedFor}
+
+Fan(name, address)
+{name -> address}
+
+TeamColours(teamName, colour)
+{}
+
+FavouriteColours(fanName, colour)
+{}
+
+FavouritePlayers(fanName, playerName)
+{}
+
+FavouriteTeams(fanName, teamName)
+{}
+
+Yes, this schema is BCNF

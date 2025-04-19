@@ -1,0 +1,14 @@
+R(A,B,C,D,E)
+F = { A → B, BC → E, ED → A }
+
+(a)
+CD+ = {CD}
+ACD+ = {ABCDE} = R -> candidate key
+BCD+ = {ABCDE} = R -> candidate key
+CDE+ = {ABCDE} = R -> candidate key
+
+(b)
+Yes, this is in 3NF.
+
+(c)
+No, not BCNF.

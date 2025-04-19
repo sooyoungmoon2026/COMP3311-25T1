@@ -1,0 +1,14 @@
+R(A,B,C,D,E,F,G)
+F = { A → B, BC → F, BD → EG, AD → C, D → F, BEG → FA } 
+
+(a)
+A+ = {AB}
+
+(b)
+ACEG+ = {ABCEFG}
+
+(c)
+BD+ = {ABCDEFG} = R -> super key
+B+ = {B}
+D+ = {DF}
+-> BD is a candidate key
