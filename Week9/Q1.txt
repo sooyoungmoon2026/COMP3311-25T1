@@ -1,0 +1,14 @@
+A	B	C
+---------
+a	1	x
+b	2	y
+c	1	z
+d	2	x
+a	1	y
+b	2	z
+
+B -/> A
+A -/> C
+B -/> C
+C -/> B
+c -/> A
